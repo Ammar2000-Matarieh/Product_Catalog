@@ -1,17 +1,40 @@
-# product_catalog_with_local_cart
+# Product Catalog with Local Cart 🛒
 
-A new Flutter project.
+تطبيق فلاتر مخصص لعرض المنتجات وإدارتها داخل سلة تسوق محلية (Local Cart). تم بناؤه كجزء من مشروع/تاسك لإظهار مهارات التعامل مع واجهات المستخدم وإدارة البيانات محلياً.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📱 لقطات من التطبيق (Screenshots)
 
-A few resources to get you started if this is your first Flutter project:
+هنا يمكنك رؤية واجهات التطبيق الرئيسية:
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+| الواجهة الرئيسية (Home) | تفاصيل المنتج (Details) | سلة التسوق (Cart) |
+| :---: | :---: | :---: |
+| <img src="assets/home.png" width="250" /> | <img src="assets/details.png" width="250" /> | <img src="assets/cart.png" width="250" /> |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## ✨ المميزات (Features)
+
+* **كتالوج المنتجات:** عرض قائمة المنتجات بشكل منسق وجذاب.
+* **تفاصيل المنتج:** صفحة مخصصة لكل منتج تعرض تفاصيله الكاملة.
+* **سلة التسوق المحلية (Local Cart):** إضافة وحذف المنتجات، وتعديل الكميات مباشرة مع حساب الإجمالي.
+* **إدارة الحالة (State Management):** تحديث فوري للواجهات عند تعديل السلة.
+
+---
+
+## 🛠️ التقنيات المستخدمة (Tech Stack)
+
+* **Flutter & Dart**
+* **State Management:** (اكتب هنا الأداة المستخدمة مثل Provider أو Bloc أو setState)
+* **Local Storage:** (اكتب هنا طريقة الحفظ المحلية إذا استخدمت Shared Preferences أو Hive أو غيرها)
+
+---
+
+## 🚀 طريقة التشغيل (How to Run)
+
+لتشغيل المشروع محلياً على جهازك، اتبع الخطوات التالية:
+
+1. قم بعمل Clone للمستودع:
+   ```bash
+   git clone <رابط_المستودع_هنا>
