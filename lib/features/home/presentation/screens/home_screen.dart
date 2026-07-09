@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:product_catalog_with_local_cart/features/cart/presentation/screens/cart_screen.dart';
 import 'package:product_catalog_with_local_cart/features/home/presentation/widgets/custom_body.dart';
 import 'package:product_catalog_with_local_cart/features/cart/presentation/cubit/cart_cubit.dart';
 
@@ -50,12 +49,7 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.white,
                         size: 20,
                       ),
-                      onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const CartScreen(),
-                        ),
-                      ),
+                      onPressed: () => Navigator.pushNamed(context, '/cart'),
                     ),
                   );
                 },

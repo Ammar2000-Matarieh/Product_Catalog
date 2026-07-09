@@ -51,8 +51,36 @@ class CustomItemCard extends StatelessWidget {
 
             IconButton(
               icon: const Icon(Icons.delete_outline, color: Colors.red),
-              onPressed: () =>
-                  context.read<CartCubit>().removeFromCart(item.id),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (dialogContext) => AlertDialog(
+                    title: const Text('Delete Product'),
+                    content: const Text(
+                      "Are you sure you want to remove this product from the cart?",
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(dialogContext),
+                        child: const Text(
+                          'Cancel',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          context.read<CartCubit>().removeFromCart(item.id);
+                          Navigator.pop(dialogContext);
+                        },
+                        child: const Text(
+                          'Yes',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
           ],
         ),

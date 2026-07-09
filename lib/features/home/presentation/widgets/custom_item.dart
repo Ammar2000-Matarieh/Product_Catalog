@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:product_catalog_with_local_cart/features/cart/presentation/cubit/cart_cubit.dart';
 import 'package:product_catalog_with_local_cart/features/products/data/models/product_model.dart';
 import 'package:product_catalog_with_local_cart/features/products/presentation/cubit/products_cubit.dart';
-import 'package:product_catalog_with_local_cart/features/products/presentation/screens/product_details_screen.dart';
 
 class CustomItem extends StatelessWidget {
   final List<ProductModel> products;
@@ -27,12 +26,8 @@ class CustomItem extends StatelessWidget {
         return Card(
           elevation: 3,
           child: GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ProductDetailScreen(product: product),
-              ),
-            ),
+            onTap: () =>
+                Navigator.pushNamed(context, '/details', arguments: product),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
