@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:product_catalog_with_local_cart/features/cart/presentation/pages/cart_screen.dart';
+import 'package:product_catalog_with_local_cart/features/cart/presentation/screens/cart_screen.dart';
 import 'package:product_catalog_with_local_cart/features/home/presentation/widgets/custom_body.dart';
 import 'package:product_catalog_with_local_cart/features/cart/presentation/cubit/cart_cubit.dart';
 
@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "Product Catalog",
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
         ),
         actions: [
           Padding(

@@ -14,14 +14,19 @@ class CustomItemCard extends StatelessWidget {
       margin: const EdgeInsets.all(8),
       child: ListTile(
         leading: Image.network(item.image, width: 50, fit: BoxFit.contain),
-        title: Text(item.title, maxLines: 1, overflow: TextOverflow.ellipsis),
+        title: Text(
+          item.title,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(fontSize: 14),
+        ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("\$${item.price} x ${item.quantity}"),
             Text(
               "Subtotal: \$${(item.price * item.quantity).toStringAsFixed(2)}",
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             ),
           ],
         ),

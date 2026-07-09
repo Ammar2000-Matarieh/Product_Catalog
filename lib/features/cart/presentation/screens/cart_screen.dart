@@ -9,7 +9,12 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("My Cart")),
+      appBar: AppBar(
+        title: const Text(
+          "My Cart",
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+        ),
+      ),
       body: BlocBuilder<CartCubit, CartState>(
         builder: (context, state) {
           if (state is CartLoading) {
@@ -17,7 +22,28 @@ class CartScreen extends StatelessWidget {
           }
           if (state is CartLoaded) {
             if (state.cartItems.isEmpty) {
-              return const Center(child: Text("Your cart is empty"));
+              return ListView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                children: const [
+                  SizedBox(height: 180),
+                  Icon(
+                    Icons.shopping_bag_outlined,
+                    size: 80,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(height: 16),
+                  Center(
+                    child: Text(
+                      "Your cart is empty",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ],
+              );
             }
             return Column(
               children: [

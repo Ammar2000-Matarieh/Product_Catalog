@@ -4,7 +4,7 @@ abstract class ProductsState extends Equatable {
   const ProductsState();
 
   @override
-  List<Object?> get props => []; // استخدام Object? لضمان قبول القيم
+  List<Object?> get props => [];
 }
 
 class ProductsInitial extends ProductsState {}
@@ -16,7 +16,6 @@ class ProductLoaded extends ProductsState {
 
   const ProductLoaded(this.products);
 
-  // ✨ التعديل الجوهري هنا: إخبار Equatable بمراقبة محتويات القائمة
   @override
   List<Object?> get props => [products, ...products.map((p) => p.isFavorite)];
 }

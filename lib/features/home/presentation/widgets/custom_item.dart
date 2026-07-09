@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:product_catalog_with_local_cart/features/cart/presentation/cubit/cart_cubit.dart';
@@ -37,10 +38,14 @@ class CustomItem extends StatelessWidget {
               children: [
                 Expanded(
                   child: Center(
-                    child: Image.network(
-                      product.image,
+                    child: CachedNetworkImage(
+                      imageUrl: product.image,
                       height: 100,
                       fit: BoxFit.contain,
+                      placeholder: (context, url) =>
+                          const Center(child: CircularProgressIndicator()),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.broken_image, size: 100),
                     ),
                   ),
                 ),
